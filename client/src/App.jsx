@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import InputBar from "./components/InputBar";
 import MessagesList from "./components/MessagesList";
 
-const socket = io("http://localhost:4000");
+const socket = io();
 
 function App() {
   const [message, setMessage] = useState("");

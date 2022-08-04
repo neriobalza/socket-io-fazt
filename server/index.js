@@ -4,16 +4,18 @@ import morgan from "morgan";
 import cors from "cors";
 import { Server as SocketServer } from "socket.io";
 import http from "http";
+import { dirname, join } from "path";
+import { fileURLToPath } from "url";
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const port = process.env.PORT || 4000;
+
+// App
 const app = express();
 const server = http.createServer(app);
 const io = new SocketServer(server, {
-  cors: {
-    origin: "http://localhost:3000",
-  },
+  cors: {},
 });
-
-const port = process.env.SERVER_PORT || 4500;
 
 // Middlewares
 // Morgan Middleware
@@ -35,7 +37,7 @@ io.on("connection", (socket) => {
   });
 });
 
+app.use(express.static(join(__dirname, "../client/dist")));
+
 // Running the server
 server.listen(port);
-console.clear();
-console.log(`server started on port ${port}`);
