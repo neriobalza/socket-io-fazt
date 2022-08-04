@@ -1,0 +1,40 @@
+@import "../lib/Vars.scss";
+
+.input-bar {
+  height: 6rem;
+  background: $section-color;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+
+  input {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.6rem;
+    width: 100%;
+    outline: none;
+
+    &::placeholder {
+      color: $text-color;
+    }
+  }
+
+  svg {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  button {
+    width: 5rem;
+    height: 5rem;
+    background: none;
+    border: none;
+
+    svg {
+      color: $send-button-color;
+    }
+  }
+}

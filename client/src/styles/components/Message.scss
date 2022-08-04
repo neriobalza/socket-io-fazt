@@ -1,0 +1,42 @@
+@import "../lib/Vars.scss";
+
+.message {
+  width: 100%;
+  display: flex;
+  margin-bottom: 2rem;
+
+  &__content {
+    display: inline-block;
+    max-width: 80%;
+    background: $message-received-color;
+    min-height: 3.5rem;
+    border-radius: 0.8rem 1.6rem 1.6rem 0.8rem;
+    padding: 1rem;
+  }
+
+  &.me {
+    justify-content: flex-end;
+
+    .message__content {
+      border-radius: 1.6rem 0.8rem 0.8rem 1.6rem;
+      background: $message-sent-color;
+    }
+  }
+
+  &.pb-s {
+    margin-bottom: 0.5rem;
+  }
+
+  &.pb-n {
+    margin-bottom: 0;
+  }
+
+  &__from {
+    color: $send-button-color;
+    font-size: 1.4rem;
+  }
+
+  &__body {
+    font-size: 1.8rem;
+  }
+}

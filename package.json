@@ -1,0 +1,30 @@
+{
+  "name": "chat-app",
+  "version": "0.0.1",
+  "description": "Web application using react, express, and socket.io",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "build": "npm --prefix client install && npm run --prefix client build",
+    "client": "npm run --prefix client dev"
+  },
+  "keywords": [
+    "react",
+    "express",
+    "socket.io"
+  ],
+  "author": "Nerio Balza",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "morgan": "^1.10.0",
+    "socket.io": "^4.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
